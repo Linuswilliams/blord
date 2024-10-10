@@ -4,7 +4,13 @@ import Hero from "@/components/hero/Hero";
 import PosCard from "@/components/pos card/PosCard";
 import SoftPOSSection from "@/components/soft pos/SoftPos";
 import { Star, Tag } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Blord",
+  description: "Simplify Your Business With Our POS Solutions. Make Bill Payments Effortless With Our Cutting-Edge POS Systems.",
+};
 
 export default function Home() {
   return (
