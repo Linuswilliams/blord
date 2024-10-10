@@ -19,7 +19,7 @@ const Hero = () => {
   const navigateToApplyPos = () => router.push('/apply-for-pos');
 
   return (
-    <section ref={ref} className="bg-black pt-32 text-white py-20 px-4 md:px-20 text-center">
+    <section ref={ref} className="bg-black pt-32 text-white h-[90dvh] md:h-full py-20 px-4 md:px-20 text-center">
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -42,7 +42,7 @@ const Hero = () => {
           Apply Now
         </Button>
         {/* Image Section */}
-        <div className="relative w-1/2 md:w-3/4 lg:w-1/2 mx-auto">
+        <div className="relative w-full p-5 md:w-3/4 lg:w-1/2 mx-auto">
           <Image
             src="/hero.svg" // replace with the actual image path
             alt="Woman using phone"

@@ -73,14 +73,14 @@ const AdvantageSection = () => {
         {/* Image Section */}
         <motion.div variants={itemVariants} className="relative">
           <Image 
-            src="/advantages.svg" // Replace with the actual image path
+            src="/girl.png" // Replace with the actual image path
             alt="Person with POS machine"
-            width={400}
-            height={400}
+            width={2000}
+            height={2000}
             className="rounded-lg object-cover w-full"
           />
           {/* Decorative Background Circle */}
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-100 to-transparent rounded-full -z-10" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-orange-100 to-transparent rounded-full -z-10" /> */}
         </motion.div>
         
       </div>

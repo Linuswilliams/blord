@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, Clipboard, X } from 'lucide-react'; // Icons
+import { Check, Clipboard, Info, X } from 'lucide-react'; // Icons
 
 import { Button } from '../ui/button';
 
@@ -25,8 +25,22 @@ const PaymentInfoModal = ({handlePaymentInfoModalOpen,setIsModalOpen, isModalOpe
     setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
   };
 
+  const navigateToWhatsapp = async () => {
+    try {
+      const defaultPhoneNumber = '2347034560269'; // Remove the + for the WhatsApp URL
+      const defaultMessage = 'Hello! my name is _______ and I just made a payment for ___ pos and here is my payment receipt';
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${defaultPhoneNumber}&text=${encodeURIComponent(defaultMessage)}`;
+      
+      window.open(whatsappUrl);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
   return (
     <>
+
 
       {/* Modal */}
       {isModalOpen && (
@@ -78,6 +92,17 @@ const PaymentInfoModal = ({handlePaymentInfoModalOpen,setIsModalOpen, isModalOpe
                 </div>
               </InfoCard>
             </div>
+
+            <InfoCard>
+            <Button
+            onClick={navigateToWhatsapp}
+            variant="outline"
+            className="w-full border-orange-500 text-orange-500 hover:bg-orange-600 hover:text-white py-3"
+          >
+            I have made this payment
+          </Button>
+            </InfoCard>
+
           </div>
         </div>
       )}
