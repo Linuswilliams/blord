@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import PosApplications from '../../../../lib/models/posApplications';
-import dbConnect from '@/lib/db';
+import { connectToDb } from "@/lib/db";
 
 export async function POST(req) {
   try {
-    await dbConnect();
+    await connectToDb();
 
     const {
       fullName,

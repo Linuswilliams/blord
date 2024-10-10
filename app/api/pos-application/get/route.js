@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server';
 import PosApplications from '../../../../lib/models/posApplications';
-import dbConnect from '@/lib/db';
+import { connectToDb } from "@/lib/db";
+
 
 export async function GET(req) {
   try {
-    await dbConnect();
+    await connectToDb()
 
     const checkIfApplicationsExists = await PosApplications.find({}).sort({createdAt:-1})
 
