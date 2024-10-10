@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import dbConnect from '@/lib/mongoose';
-import PosApplications from '../../../lib/models/posApplications';
+import PosApplications from '../../../../lib/models/posApplications';
+import dbConnect from '@/lib/db';
 
 export async function GET(req) {
   try {
