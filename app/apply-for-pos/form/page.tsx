@@ -24,12 +24,6 @@ interface FormInputs {
   imageUrl: FileList; // File input
 }
 
-export const metadata: Metadata = {
-    title: "POS Application form | Blord",
-    description: "Simplify Your Business With Our POS Solutions. Make Bill Payments Effortless With Our Cutting-Edge POS Systems.",
-  };
-
-
 export default function Component() {
   const { register, reset, handleSubmit, formState: { errors } } = useForm<FormInputs>();
   const [fileName, setFileName] = useState("No file selected");
