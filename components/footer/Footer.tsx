@@ -26,42 +26,43 @@ const Footer = () => {
             </div>
           </div>
 
-<div className='grid grid-cols-2 '>
+<div className='grid grid-cols-2 space-x-10'>
           {/* Middle Section: Services List */}
           <div className="mt-8 md:mt-0">
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm list-disc">
-              <li className=''>
+            
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Airtime
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Data
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Electricity Bills
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Cable Subscription
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Bet Funding
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Flight Booking
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Giftcards
                 </Link>
@@ -73,22 +74,22 @@ const Footer = () => {
           <div className="mt-8 md:mt-0">
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm mb-4 list-disc">
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 About Us
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Privacy Policy
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Terms of Use
                 </Link>
                 </li>
-              <li className=''>
+              <li className='ml-4'>
                 <Link href={'#'}>
                 Contact Us
                 </Link>
@@ -101,7 +102,7 @@ const Footer = () => {
 
           <div className='mt-8 md:mt-0'>
           <div className="mb-4 list-disc">
-              <li className="text-sm font-semibold">Info</li>
+              <h4 className="text-sm font-semibold">Info</h4>
               <li className="text-sm">+234 703 456 0269</li>
               <li> <Link href="mailto:support@billpointpos.co" className="text-sm">
                 support@billpointpos.co
