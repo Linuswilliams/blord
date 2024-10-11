@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Blord",
-  description: "Simplify Your Business With Our POS Solutions. Make Bill Payments Effortless With Our Cutting-Edge POS Systems.",
+  title: "Billpoint POS",
+  description: "Your #1 partner for accepting payments from your customers and bill payment services on the go!",
 };
 
 export default function RootLayout({

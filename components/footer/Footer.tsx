@@ -1,7 +1,8 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Twitter, Youtube, Apple, Play } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, Apple, Play, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { TwitterLogoIcon } from '@radix-ui/react-icons';
 
 const Footer = () => {
   return (
@@ -92,15 +93,15 @@ const Footer = () => {
               {/* Social Media Icons */}
               <div className="flex items-center space-x-4 mt-4">
                 <Link href="#"><Facebook className="text-white w-6 h-6" /></Link>
-                <Link href="#"><Linkedin className="text-white w-6 h-6" /></Link>
-                <Link href="#"><Instagram className="text-white w-6 h-6" /></Link>
-                <Link href="https://billpoint.co/#"><Twitter className="text-white w-6 h-6" /></Link>
-                <Link href="#"><Youtube className="text-white w-6 h-6" /></Link>
+                <Link href="https://x.com/billpointafrica?s=21"><TwitterLogoIcon className="text-white w-6 h-6" /></Link>
+                <Link href="https://www.instagram.com/billpoint.co?igsh=MWw4ZnhpZTgyMW1xYg=="><Instagram className="text-white w-6 h-6" /></Link>
+                {/* <Link href="https://billpoint.co/#"><Twitter className="text-white w-6 h-6" /></Link> */}
+                {/* <Link href="#"><Youtube className="text-white w-6 h-6" /></Link> */}
               </div>
 
               {/* Play Store and App Store Buttons */}
               <div className="flex flex-col space-y-3 mt-4">
-                <Link href="https://play.google.com">
+                <Link href="https://play.google.com/store/apps/details?id=co.billpoint.app&hl=en">
                   <div className="flex items-center bg-white text-black px-4  py-2 rounded">
                     {/* <PlayStore className="w-6 h-6 mr-2" /> */}
                     <Image alt='' src='/images.png' width={30} height={20}/>

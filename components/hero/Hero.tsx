@@ -32,7 +32,7 @@ const Hero = () => {
         </h1>
         {/* Subtitle */}
         <p className="text-lg md:text-xl mb-8">
-          Make Bill Payments Effortless With Our Cutting-Edge POS Systems.
+        Your #1 partner for accepting payments from your customers and bill payment services on the go!.
         </p>
         {/* Button */}
         <Button 
