@@ -9,7 +9,7 @@ const Footer = () => {
       {/* Container for content */}
       <div className="mx-auto px-4 lg:px-8">
         {/* Grid for desktop and stack for mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 p-4">
           {/* Left Section: Logo and Address */}
 
             <div className="flex space-x-4 mb-4">
@@ -26,41 +26,42 @@ const Footer = () => {
             </div>
           </div>
 
+<div className='grid grid-cols-2 '>
           {/* Middle Section: Services List */}
           <div className="mt-8 md:mt-0">
             <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
+            <ul className="space-y-2 text-sm list-disc">
+              <li className=''>
                 <Link href={'#'}>
                 Airtime
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Data
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Electricity Bills
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Cable Subscription
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Bet Funding
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Flight Booking
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Giftcards
                 </Link>
@@ -71,23 +72,23 @@ const Footer = () => {
           {/* Right Section: Company Info and Social Media */}
           <div className="mt-8 md:mt-0">
             <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-sm mb-4">
-              <li>
+            <ul className="space-y-2 text-sm mb-4 list-disc">
+              <li className=''>
                 <Link href={'#'}>
                 About Us
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Privacy Policy
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Terms of Use
                 </Link>
                 </li>
-              <li>
+              <li className=''>
                 <Link href={'#'}>
                 Contact Us
                 </Link>
@@ -96,14 +97,16 @@ const Footer = () => {
 
             {/* Contact Info */}
           </div>
+          </div>
 
           <div className='mt-8 md:mt-0'>
-          <div className="mb-4">
-              <h4 className="text-sm font-semibold">Info</h4>
-              <p className="text-sm">+234 703 456 0269</p>
-              <Link href="mailto:support@billpointpos.co" className="text-sm">
+          <div className="mb-4 list-disc">
+              <li className="text-sm font-semibold">Info</li>
+              <li className="text-sm">+234 703 456 0269</li>
+              <li> <Link href="mailto:support@billpointpos.co" className="text-sm">
                 support@billpointpos.co
-              </Link>
+              </Link></li>
+
             </div>
 
             {/* Social Media Icons */}
