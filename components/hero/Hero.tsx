@@ -44,9 +44,9 @@ const Hero = () => {
         {/* Image Section */}
         <div className="relative w-full p-5 md:w-3/4 lg:w-1/2 mx-auto">
           <Image
-            src="/hero.svg" // replace with the actual image path
+            src="/hero1.jpg" // replace with the actual image path
             alt="Woman using phone"
-            width={800}
+            width={900}
             height={450}
             className="relative z-10"
           />
