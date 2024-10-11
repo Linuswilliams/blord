@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, Apple, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,7 +11,8 @@ const Footer = () => {
         {/* Grid for desktop and stack for mobile */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
           {/* Left Section: Logo and Address */}
-          <div className="flex space-x-4 mb-4">
+          <div >
+            <div className="flex space-x-4 mb-4">
             <div>
               <Image src="/logo.png" width={380} height={380} alt="Logo" />
             </div>
@@ -23,6 +24,8 @@ const Footer = () => {
                 Anambra State, Nigeria
               </p>
             </div>
+            </div>
+            <Image src={'/ll.png'} width={400} height={400} alt=''/>
           </div>
 
           {/* Services and Company Info in two columns on mobile, three on desktop */}
@@ -87,12 +90,33 @@ const Footer = () => {
               </div>
 
               {/* Social Media Icons */}
-              <div className="flex justify-center items-center space-x-4 mt-4">
+              <div className="flex items-center space-x-4 mt-4">
                 <Link href="#"><Facebook className="text-white w-6 h-6" /></Link>
                 <Link href="#"><Linkedin className="text-white w-6 h-6" /></Link>
                 <Link href="#"><Instagram className="text-white w-6 h-6" /></Link>
                 <Link href="https://billpoint.co/#"><Twitter className="text-white w-6 h-6" /></Link>
                 <Link href="#"><Youtube className="text-white w-6 h-6" /></Link>
+              </div>
+
+              {/* Play Store and App Store Buttons */}
+              <div className="flex flex-col space-y-3 mt-4">
+                <Link href="https://play.google.com">
+                  <div className="flex items-center bg-white text-black  py-2 rounded">
+                    {/* <PlayStore className="w-6 h-6 mr-2" /> */}
+                    <Image alt='' src='/images.png' width={30} height={20}/>
+                    <span className="text-sm">Play Store</span>
+                  </div>
+                </Link>
+                <Link href="https://apps.apple.com">
+                  <div className="flex items-center bg-white text-black px-4 py-3 rounded">
+                    <Apple className="w-6 h-6 mr-2" />
+                    <span className="text-sm">App Store</span>
+                  </div>
+                </Link>
+
+                <div className='pt-5'>
+                  <Image  src={'/scan.png'} width={170} height={170} alt=''/>
+                </div>
               </div>
             </div>
           </div>
