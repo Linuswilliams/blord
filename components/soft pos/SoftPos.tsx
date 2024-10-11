@@ -61,10 +61,10 @@ export default function Component() {
         {/* Image Section */}
         <motion.div variants={itemVariants} className="md:w-1/2 flex justify-end">
           <Image 
-            src="/grouppos.svg"
+            src="/b.png"
             alt="Bill Point POS Machine"
-            width={800}
-            height={1000}
+            width={1000}
+            height={900}
             className=""
           />
         </motion.div>
