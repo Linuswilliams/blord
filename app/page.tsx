@@ -59,6 +59,7 @@ export default function Home() {
         />
       </div>
     </div>
+    
 
     <AdvantageSection/>
     <SoftPOSSection/>
