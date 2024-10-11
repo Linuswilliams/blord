@@ -9,7 +9,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import SuccessModal from "@/components/success modal/SuccessModal";
 import axios from "axios";
-import { Metadata } from "next";
 
 interface FormInputs {
   fullName: string;
