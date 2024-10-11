@@ -73,7 +73,7 @@ const AdvantageSection = () => {
         {/* Image Section */}
         <motion.div variants={itemVariants} className="relative">
           <Image 
-            src="/girl.png" // Replace with the actual image path
+            src="/woman.jpg" // Replace with the actual image path
             alt="Person with POS machine"
             width={2000}
             height={2000}

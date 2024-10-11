@@ -29,7 +29,7 @@ export default function Home() {
         imageStyle={'bg-[#FFCDB2]'}
           title="Kernel POS"
           description="Affordable, Compact, And Durable - Delivering High Value For Money."
-          imageSrc="/kennelpos.svg" // Replace with actual image path
+          imageSrc="/dx.jpg" // Replace with actual image path
           imageAlt="Kernel POS"
           features={[
             {
@@ -46,7 +46,7 @@ export default function Home() {
         imageStyle={'bg-[#F2FBF0]'}
           title="Android POS"
           description="Smooth Operation, Versatile Features Like Savings - Designed To Fulfill Your Needs Efficiently."
-          imageSrc="/andriodpos.svg" // Replace with actual image path
+          imageSrc="/xx.png" // Replace with actual image path
           imageAlt="Android POS"
           features={[
             {
