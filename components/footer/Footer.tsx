@@ -20,6 +20,7 @@ const Footer = () => {
               <p className="text-sm">
                 BillPoint is a leading payment service provider that enables users
                 to easily and securely pay for various bills and subscriptions.
+                <br/>
                 Address: No. 29 Dr. Okey Anueyiagu Road Awka, <br />
                 Anambra State, Nigeria
               </p>
