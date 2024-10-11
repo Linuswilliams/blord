@@ -25,7 +25,6 @@ const Footer = () => {
               </p>
             </div>
             </div>
-            <Image src={'/ll.png'} width={400} height={400} alt=''/>
           </div>
 
           {/* Services and Company Info in two columns on mobile, three on desktop */}
@@ -101,7 +100,7 @@ const Footer = () => {
               {/* Play Store and App Store Buttons */}
               <div className="flex flex-col space-y-3 mt-4">
                 <Link href="https://play.google.com">
-                  <div className="flex items-center bg-white text-black  py-2 rounded">
+                  <div className="flex items-center bg-white text-black px-4  py-2 rounded">
                     {/* <PlayStore className="w-6 h-6 mr-2" /> */}
                     <Image alt='' src='/images.png' width={30} height={20}/>
                     <span className="text-sm">Play Store</span>
@@ -114,9 +113,9 @@ const Footer = () => {
                   </div>
                 </Link>
 
-                <div className='pt-5'>
+                {/* <div className='pt-5'>
                   <Image  src={'/scan.png'} width={170} height={170} alt=''/>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
