@@ -45,7 +45,7 @@ export default function Component() {
         animate={controls}
         initial="hidden"
         variants={containerVariants}
-        className="container bg-black mx-auto -py-10 md:px-12 max-w-[1000px] rounded-2xl flex flex-col md:flex-row items-center text-white"
+        className="container p-3 bg-black mx-auto -py-10 md:px-12 max-w-[1000px] rounded-2xl flex flex-col md:flex-row items-center text-white"
       >
         {/* Text Section */}
         <motion.div variants={itemVariants} className="md:w-1/2">
@@ -59,7 +59,7 @@ export default function Component() {
         </motion.div>
         
         {/* Image Section */}
-        <motion.div variants={itemVariants} className="md:w-1/2 flex justify-end relative w-[100px] h-[300px]">
+        <motion.div variants={itemVariants} className="md:w-1/2 flex justify-end relative w-[400px] h-[300px]">
           <Image 
             src="/b.png"
             alt="Bill Point POS Machine"
