@@ -39,18 +39,18 @@ export default function Component() {
   }
 
   return (
-    <div className="m-6 flex items-center justify-center relative">
+    <div className="m-6 mt-44 flex items-center justify-center relative">
       <motion.div 
         ref={ref}
         animate={controls}
         initial="hidden"
         variants={containerVariants}
-        className="container p-3 bg-black mx-auto -py-10 md:px-12 max-w-[1000px] rounded-2xl flex flex-col md:flex-row items-center text-white"
+        className="container bg-black mx-auto -py-10 md:px-12 max-w-[1000px] rounded-2xl flex flex-col md:flex-row p-5 items-center text-white"
       >
         {/* Text Section */}
         <motion.div variants={itemVariants} className="md:w-1/2">
           <motion.h2 variants={itemVariants} className="text-3xl font-bold mb-4">
-            Move your business forward with <span className="text-purple-400">softPOS</span>
+            Move your business forward with our <span className="text-purple-400">softPOS</span>
           </motion.h2>
           <motion.p variants={itemVariants} className="text-lg mb-4">
             Business can find you anywhere. softPOS from Bill point helps you receive payments 
@@ -59,7 +59,7 @@ export default function Component() {
         </motion.div>
         
         {/* Image Section */}
-        <motion.div variants={itemVariants} className="md:w-1/2 flex justify-end relative w-[400px] h-[300px]">
+        <motion.div variants={itemVariants} className="md:w-1/2 flex justify-end right-0 lg:bottom-[-50px] w-[350px] h-[300px] lg:h-[500px] relative lg:absolute">
           <Image 
             src="/b.png"
             alt="Bill Point POS Machine"
