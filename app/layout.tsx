@@ -17,7 +17,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Billpoint POS",
-  description: "Your #1 partner for accepting payments from your customers and bill payment services on the go!",
+  description: "Your #1 partner for accepting payments from your customers on the go!",
 };
 
 export default function RootLayout({
