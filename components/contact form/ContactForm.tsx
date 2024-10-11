@@ -173,7 +173,7 @@ const [howDidYouHear, setHowDidYouHear] = useState('')
           <div className="items-start space-y-4 md:items-center gap-4">
             <div className="flex items-center space-x-2 bg-gray-100 p-3 rounded-md">
               <Mail className="w-5 h-5 text-gray-600" />
-              <span className="text-sm text-gray-700">support@billpointpos</span>
+              <span className="text-sm text-gray-700">support@billpointpos.co</span>
             </div>
 
             <div className="flex items-center space-x-2 bg-gray-100 p-3 rounded-md">
