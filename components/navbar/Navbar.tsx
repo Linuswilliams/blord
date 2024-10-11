@@ -57,10 +57,9 @@ export default function Navbar() {
     return pathname === itemLink ? 'text-orange-500' : textColor
   }
 
-  const navigateToApplyToPos = () =>{
-    console.log('clicked')
-     router.push('/apply-for-pos')
-    }
+  const navigateToApplyToPos = () => {
+    router.push('/apply-for-pos')
+  }
 
   return (
     <>
@@ -68,22 +67,25 @@ export default function Navbar() {
         isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
       }`}>
         <div className="flex justify-between items-center p-4">
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
             <Link href='/'>
-            <div className="text-2xl font-bold">
-              <Image src={'/logo.png'} width={50} height={50} alt='logo'/>
-            </div>
+              <div className="text-2xl font-bold">
+                <Image src={'/logo.png'} width={50} height={50} alt='logo' />
+              </div>
             </Link>
-            <ul className="hidden ml-32 md:flex space-x-14">
-              {menuItems.map((item) => (
-                <li key={item.name}>
-                  <Link href={item.link} className={`${getItemColor(item.link)} cursor-pointer hover:underline`}>
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
+
+          {/* Center the list of links */}
+          <ul className="hidden md:flex justify-center items-center space-x-14 mx-auto">
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <Link href={item.link} className={`${getItemColor(item.link)} cursor-pointer hover:underline`}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
           <div className="hidden md:block">
             <Button onClick={navigateToApplyToPos} className={`px-10 py-5 ${buttonStyle}`}>Apply Now</Button>
           </div>
@@ -100,7 +102,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 flex items-start justify-start pt-20"
+            className="fixed inset-0 bg-white z-40 flex items-start justify-center pt-20"
           >
             <ul className="w-full px-6">
               {menuItems.map((item, index) => (
@@ -113,7 +115,7 @@ export default function Navbar() {
                 >
                   <Link 
                     href={item.link} 
-                    className={`text-2xl  text-black`}
+                    className={`text-2xl text-black`}
                     onClick={closeMenu}
                   >
                     {item.name}
@@ -126,7 +128,7 @@ export default function Navbar() {
                 transition={{ delay: menuItems.length * 0.1 }}
                 className="mt-8"
               >
-                <Button onClick={navigateToApplyToPos} className="px-8 py-4 text-lg bg-black  hover:bg-gray-800">
+                <Button onClick={navigateToApplyToPos} className="px-8 py-4 text-lg bg-black hover:bg-gray-800">
                   Apply Now
                 </Button>
               </motion.li>
