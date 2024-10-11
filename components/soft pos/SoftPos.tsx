@@ -59,7 +59,7 @@ export default function Component() {
         </motion.div>
         
         {/* Image Section */}
-        <motion.div variants={itemVariants} className="md:w-1/2 flex justify-end right-0 lg:bottom-[-50px] w-[350px] h-[300px] lg:h-[500px] relative lg:absolute">
+        <motion.div variants={itemVariants} className="md:w-1/2 flex justify-end right-0 lg:bottom-[-70px] w-[350px] h-[300px] lg:h-[400px] relative lg:absolute">
           <Image 
             src="/b.png"
             alt="Bill Point POS Machine"
