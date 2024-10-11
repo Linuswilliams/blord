@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import SuccessModal from "@/components/success modal/SuccessModal";
 import axios from "axios";
 
+
 interface FormInputs {
   fullName: string;
   email: string;
