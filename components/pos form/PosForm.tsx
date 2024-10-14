@@ -105,7 +105,7 @@ export default function Component() {
         throw new Error('Failed to upload image');
       }
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     } finally {
       setIsImageLoading(false);
     }

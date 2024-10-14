@@ -29,9 +29,9 @@ const [howDidYouHear, setHowDidYouHear] = useState('')
     },
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     setIsSubmitting(true); // Start the loading state
-    console.log(data);
+    // console.log(data);
     try {
         const {fullName, email,phoneNumber, reason, message} = data
 
@@ -48,11 +48,11 @@ const [howDidYouHear, setHowDidYouHear] = useState('')
 
         setIsOpen(true)
         setIsSubmitted(true)
-        console.log(response)
+        // console.log(response)
         setIsSubmitting(false);
    
     } catch (error) {
-      console.error("Error submitting form:", error);
+      // console.error("Error submitting form:", error);
       setIsSubmitting(false); // Stop loading if there's an error
     }
   };

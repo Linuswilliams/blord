@@ -67,10 +67,10 @@ export default function Component() {
       const result = await res.data;
 
       setIsOpen(true);
-      console.log(result);
+      // console.log(result);
       reset();
     } catch (error) {
-      console.error("Form submission error:", error);
+      // console.error("Form submission error:", error);
       alert(`An error occurred while submitting the form: ${error}`);
     } finally {
       setIsLoading(false);
@@ -96,14 +96,13 @@ export default function Component() {
 
       const data = await response.json();
       if (data.secure_url) {
-        console.log(data)
         setImageUri(data.secure_url);
         setIsImageUploaded(true);
       } else {
         throw new Error("Image upload failed");
       }
     } catch (error) {
-      console.error("Error uploading image:", error);
+      // console.error("Error uploading image:", error);
       alert("Error uploading image. Please try again.");
     } finally {
       setIsImageLoading(false);

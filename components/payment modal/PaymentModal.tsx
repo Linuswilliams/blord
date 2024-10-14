@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Button } from '../ui/button';
 import { Label } from '../ui/label';
 
-const PaymentModal = ({ handlePaymentInfoModalOpen, handlePaymentModalOpen, isOpen }) => {
+const PaymentModal = ({ handlePaymentInfoModalOpen, handlePaymentModalOpen, isOpen }:any) => {
   const [posMachineType, setPosMachineType] = useState("Android POS Machine - ₦120,000");
 
   if (!isOpen) return null;

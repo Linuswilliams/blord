@@ -33,7 +33,7 @@ const PaymentInfoModal = ({handlePaymentInfoModalOpen,setIsModalOpen, isModalOpe
       
       window.open(whatsappUrl);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
