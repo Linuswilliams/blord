@@ -16,7 +16,7 @@ const Hero = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  const navigateToApplyPos = () => router.push('/apply-for-pos');
+  const navigateToApplyPos = () => router.push('/apply-for-pos/form');
 
   return (
     <section ref={ref} className="bg-black pt-44 text-white h-[90dvh] md:h-full py-20 px-4 md:px-20 text-center">

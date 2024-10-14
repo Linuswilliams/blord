@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-import axios from "axios";
 import SuccessModal from "../success modal/SuccessModal";
+import { axios } from "@/lib/axios";
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false); // State to track form submission

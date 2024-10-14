@@ -8,8 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import SuccessModal from "@/components/success modal/SuccessModal";
-import axios from "axios";
-
+import PaymentModal from "@/components/payment modal/PaymentModal";
+import PaymentInfoModal from "@/components/payment info/PaymentInfo";
+import { axios } from "@/lib/axios";
 
 interface FormInputs {
   fullName: string;
@@ -21,7 +22,7 @@ interface FormInputs {
   address: string;
   state: string;
   additionalComments: string;
-  imageUrl: FileList; // File input
+  imageUrl: FileList;
 }
 
 export default function Component() {
@@ -31,12 +32,16 @@ export default function Component() {
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false); // Track submission state
-  const [areYouAMerchant,setAreYouAMerchant] = useState('')
-  const fileInputRef = useRef<HTMLInputElement>(null); // Ref for the hidden input
-  const [posType, setPosType] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posType, setPosType] = useState('');
+  const [areYouAMerchant, setAreYouAMerchant] = useState('');
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(true); // Payment modal open state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
+
+  const fileInputRef = useRef<HTMLInputElement>(null); 
+
   const handleFileButtonClick = () => {
-    // Trigger the file input click
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
@@ -48,36 +53,27 @@ export default function Component() {
       return;
     }
 
-    // Start the submission process
-    setIsSubmitting(true);
+    setIsLoading(true);
 
-    // Send form data with the uploaded image URL
     const formDataToSubmit = {
       ...data,
       imageUrl: imageUri,
       areYouAMerchant,
-      posType
+      posType,
     };
 
-
-    console.log(formDataToSubmit)
-
     try {
-      // Post the form data to the server
       const res = await axios.post("/api/pos-application/post", formDataToSubmit);
-
       const result = await res.data;
 
-      setIsOpen(true)
-      console.log(result)
-
-    reset()
-
+      setIsOpen(true);
+      console.log(result);
+      reset();
     } catch (error) {
       console.error("Form submission error:", error);
-      alert(`"An error occurred while submitting the form.", ${error}`);
+      alert(`An error occurred while submitting the form: ${error}`);
     } finally {
-      setIsSubmitting(false); // End the submission process
+      setIsLoading(false);
     }
   };
 
@@ -89,7 +85,6 @@ export default function Component() {
     setIsImageLoading(true);
 
     try {
-      // Upload image to Cloudinary (or similar service)
       const formData = new FormData();
       formData.append("file", file);
       formData.append("upload_preset", "a5wslp5p");
@@ -119,9 +114,25 @@ export default function Component() {
     setIsOpen(false);
   };
 
+  const handlePaymentInfoModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handlePaymentModalOpen = () => {
+    setIsPaymentModalOpen(!isPaymentModalOpen);
+  };
+
+
   return (
     <>
       <SuccessModal isOpen={isOpen} handleClose={handleClose} />
+      <PaymentModal
+      handlePaymentModalOpen={handlePaymentModalOpen}
+      isOpen={isPaymentModalOpen}
+          handlePaymentInfoModalOpen={handlePaymentInfoModalOpen}
+        />
+      <PaymentInfoModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} handlePaymentInfoModalOpen={handlePaymentInfoModalOpen} />
+
       <div className="container mt-20 mx-auto p-4 md:p-8">
         <h1 className="text-3xl font-bold text-center mb-8">
           Apply for Your Bill Point <span className="text-red-500">POS</span> Machine Today!
@@ -143,12 +154,12 @@ export default function Component() {
             <Input
               id="email"
               type="email"
-              {...register("email", { 
+              {...register("email", {
                 required: "Email is required",
                 pattern: {
                   value: /\S+@\S+\.\S+/,
-                  message: "Invalid email address"
-                }
+                  message: "Invalid email address",
+                },
               })}
               placeholder="Enter your Email"
             />
@@ -159,12 +170,12 @@ export default function Component() {
             <Label htmlFor="phoneNumber">Phone Number</Label>
             <Input
               id="phoneNumber"
-              {...register("phoneNumber", { 
+              {...register("phoneNumber", {
                 required: "Phone number is required",
                 minLength: {
                   value: 10,
-                  message: "Phone number must be at least 10 digits"
-                }
+                  message: "Phone number must be at least 10 digits",
+                },
               })}
               placeholder="Enter your Phone Number"
             />
@@ -173,7 +184,7 @@ export default function Component() {
 
           <div>
             <Label htmlFor="posType">POS machine type</Label>
-            <Select onValueChange={(value)=>setPosType(value)}>
+            <Select onValueChange={(value) => setPosType(value)}>
               <SelectTrigger id="posType">
                 <SelectValue placeholder="Select POS machine type" />
               </SelectTrigger>
@@ -197,7 +208,7 @@ export default function Component() {
 
           <div>
             <Label htmlFor="areYouAMerchant">Are you a Merchant</Label>
-            <Select onValueChange={(value) => setAreYouAMerchant(value) }>
+            <Select onValueChange={(value) => setAreYouAMerchant(value)}>
               <SelectTrigger id="areYouAMerchant">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
@@ -249,20 +260,26 @@ export default function Component() {
               />
             </div>
 
-            <Button type="button" variant="outline" onClick={handleFileButtonClick}>
-              {isImageLoading ? "Uploading..." : isImageUploaded ? "Uploaded" : "Choose file"}
+            <Button type="button" className="bg-orange-500" onClick={handleFileButtonClick}>
+              {
+                isImageLoading ? 'uploading' : isImageUploaded ?'uploaded' :'Upload'
+              }
             </Button>
             <input
               type="file"
-              ref={fileInputRef} // Ref for the hidden input
+              ref={fileInputRef}
+              accept="image/*"
               onChange={handleFileChange}
               className="hidden"
             />
           </div>
-          {errors.imageUrl && <p className="text-red-500 text-sm mt-1">{errors.imageUrl.message}</p>}
 
-          <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Submit application"}
+          <Button 
+            className="w-full bg-orange-500"
+          >
+            {
+              isLoading ? 'Submitting...' :'Submit'
+            }
           </Button>
         </form>
       </div>

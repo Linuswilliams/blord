@@ -50,7 +50,7 @@ export default function Navbar() {
   const menuItems = [
     {link:'/', name: 'Home'},
     {link:'/contact', name: 'Contact'},
-    {link:'/apply-for-pos', name: 'Apply For POS'},
+    {link:'/apply-for-pos/form', name: 'Apply For POS'},
   ]
 
   const getItemColor = (itemLink: string) => {
@@ -58,7 +58,7 @@ export default function Navbar() {
   }
 
   const navigateToApplyToPos = () => {
-    router.push('/apply-for-pos')
+    router.push('/apply-for-pos/form')
   }
 
   return (

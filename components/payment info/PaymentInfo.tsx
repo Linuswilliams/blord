@@ -27,7 +27,7 @@ const PaymentInfoModal = ({handlePaymentInfoModalOpen,setIsModalOpen, isModalOpe
 
   const navigateToWhatsapp = async () => {
     try {
-      const defaultPhoneNumber = '2347034560269'; // Remove the + for the WhatsApp URL
+      const defaultPhoneNumber = '2347082432117'; // Remove the + for the WhatsApp URL
       const defaultMessage = 'Hello! my name is _______ and I just made a payment for ___ pos and here is my payment receipt';
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${defaultPhoneNumber}&text=${encodeURIComponent(defaultMessage)}`;
       

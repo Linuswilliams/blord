@@ -3,16 +3,16 @@
 import { useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { Button } from '../ui/button';
-import axios from 'axios';
 import { Label } from '../ui/label';
 
-const PaymentModal = ({ handlePaymentInfoModalOpen }) => {
+const PaymentModal = ({ handlePaymentInfoModalOpen, handlePaymentModalOpen, isOpen }) => {
   const [posMachineType, setPosMachineType] = useState("Android POS Machine - ₦120,000");
 
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed p-5 inset-0 flex items-center justify-center bg-black z-[50] bg-opacity-[.5]">
-      <div className="bg-white p-8 rounded-lg max-w-lg w-full shadow-lg">
+    <div onClick={handlePaymentModalOpen} className="fixed p-5 inset-0 flex items-center justify-center bg-black z-[50] bg-opacity-[.5]">
+      <div onClick={(e) => e.stopPropagation()} className="bg-white p-8 rounded-lg max-w-lg w-full shadow-lg">
         {/* Modal Heading */}
         <h2 className="text-xl font-bold text-center mb-4">Payment Required Before Proceeding</h2>
         <p className="text-center text-gray-600 mb-6">
