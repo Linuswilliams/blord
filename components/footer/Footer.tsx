@@ -82,7 +82,7 @@ const Footer = () => {
             <div>
               <div className="mb-4 list-disc">
                 <h4 className="text-sm font-semibold">Info</h4>
-                <li className="text-sm">+234 8136 619 462</li>
+                <li className="text-sm">+234 708 243 2117</li>
                
                   <Link href="mailto:support@billpointpos.co" className="text-sm inline">
                 
