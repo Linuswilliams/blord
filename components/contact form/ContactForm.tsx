@@ -178,7 +178,7 @@ const [howDidYouHear, setHowDidYouHear] = useState('')
 
             <div className="flex items-center space-x-2 bg-gray-100 p-3 rounded-md">
               <Phone className="w-5 h-5 text-gray-600" />
-              <span className="text-sm text-gray-700">+234 703 456 0269</span>
+              <span className="text-sm text-gray-700">+2348136619462</span>
             </div>
 
             <div className="flex max-w-[500px] items-center space-x-2 bg-gray-100 p-3 rounded-md">
