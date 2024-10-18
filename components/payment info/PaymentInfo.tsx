@@ -77,7 +77,7 @@ const PaymentInfoModal = ({handlePaymentInfoModalOpen,setIsModalOpen, isModalOpe
               {/* Account Number InfoCard */}
               <InfoCard title="Account Number">
                 <div className="flex justify-between text-center items-center">
-                  <p className="text-white text-xl mr-5">8883377940</p>
+                  <p className="text-white text-xl mr-5">6633627774</p>
                   <Button
                     variant="secondary"
                     size="icon"
