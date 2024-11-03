@@ -66,18 +66,18 @@ const PaymentInfoModal = ({handlePaymentInfoModalOpen,setIsModalOpen, isModalOpe
 
               {/* Recipient Bank InfoCard */}
               <InfoCard title="Recipient Bank">
-                <p className="text-white text-center text-xl">Palmpay</p>
+                <p className="text-white text-center text-xl">Safe Haven</p>
               </InfoCard>
 
               {/* Account Name InfoCard */}
               <InfoCard title="Account Name">
-                <p className="text-white text-center text-xl">Billpoint Technology Limited</p>
+                <p className="text-white text-center text-xl">Billpoint Pos</p>
               </InfoCard>
 
               {/* Account Number InfoCard */}
               <InfoCard title="Account Number">
                 <div className="flex justify-between text-center items-center">
-                  <p className="text-white text-xl mr-5">6633627774</p>
+                  <p className="text-white text-xl mr-5">0117691216</p>
                   <Button
                     variant="secondary"
                     size="icon"
