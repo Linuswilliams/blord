@@ -71,13 +71,13 @@ const PaymentInfoModal = ({handlePaymentInfoModalOpen,setIsModalOpen, isModalOpe
 
               {/* Account Name InfoCard */}
               <InfoCard title="Account Name">
-                <p className="text-white text-center text-xl">Billpoint Pos</p>
+                <p className="text-white text-center text-xl">Blord Jetpaye Limited Billpoing POS</p>
               </InfoCard>
 
               {/* Account Number InfoCard */}
               <InfoCard title="Account Number">
                 <div className="flex justify-between text-center items-center">
-                  <p className="text-white text-xl mr-5">0117691216</p>
+                  <p className="text-white text-xl mr-5">011630239</p>
                   <Button
                     variant="secondary"
                     size="icon"
